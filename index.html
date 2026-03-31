@@ -220,6 +220,10 @@
     font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-style: normal;
   }
 
+  .song-theme-visual:has(iframe)::after {
+    display: none;
+  }
+
   /* ── PRESS QUOTES ── */
   .press {
     background: var(--tobacco); padding: 8vh 8vw;
@@ -481,8 +485,15 @@
 .trailer-heading { font-family: 'Space Mono', monospace; font-size: clamp(2rem, 5vw, 4.2rem); letter-spacing: -0.02em; color: var(--aged-stone); line-height: 1; }
 .trailer-heading span { color: var(--amber-gold); }
 .trailer-sub { font-family: 'Lora', serif; font-style: italic; color: #A09080; font-size: 1rem; line-height: 1.6; margin-top: 0.6rem; }
-.trailer-video-wrap iframe {
+.trailer-video-wrap {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--tobacco);
+  overflow: hidden;
+}
+.trailer-video-wrap iframe {
+  position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   border: 0;
@@ -510,7 +521,7 @@
      To change background: update still2.jpg below
      ===================================================== -->
 <section class="hero">
-  <div class="hero-bg" style="background-image: url('images/biggerguy-stills-5');"></div>
+  <div class="hero-bg" style="background-image: url('images/biggerguy-stills-5.webp');"></div>
   <div class="light-ray"></div>
   <div class="light-ray"></div>
   <div class="light-ray"></div>
@@ -554,14 +565,14 @@
      SONG
      ===================================================== -->
 <section class="song-theme">
-<div class="song-theme-visual" style="display: flex; align-items: center;">
-  <iframe style="border-radius:12px; display: block;"
-    src="https://open.spotify.com/embed/track/0KBUuguOTZuNE8gMpEoa5S?utm_source=generator&theme=0"
-    width="100%" height="352" frameBorder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-</div>
+
+  <div class="song-theme-visual" style="display: flex; align-items: center;">
+    <iframe style="border-radius:12px; display: block;"
+      src="https://open.spotify.com/embed/track/0KBUuguOTZuNE8gMpEoa5S?utm_source=generator&theme=0"
+      width="100%" height="352" frameBorder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+  </div>
 
   <div class="song-theme-text">
     <span class="section-label">The Song</span>
@@ -633,30 +644,8 @@
 </section>
 
 <!-- =====================================================
-     MOVEMENT LANGUAGE
-     Uses the existing dance stills.
-     To add more: copy a movement-still block, update src.
+     TRAILER
      ===================================================== -->
-<section class="movement">
-  <div class="movement-header">
-    <h2 class="movement-heading">Movement <span>Language</span></h2>
-    <p class="movement-sub">The body as emotional interior — choreography by Becca Francis</p>
-  </div>
-  <div class="movement-grid">
-    <div class="movement-still"><img src="images/still1" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/still4" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/still5" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/still3" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/still2" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/biggerguy-stills-8" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/biggerguy-stills-7" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/biggerguy-stills-11" alt="Movement still"></div>
-    <div class="movement-still"><img src="images/biggerguy-stills-9" alt="Movement still"></div>
-    <!-- ADD MORE MOVEMENT STILLS HERE -->
-  </div>
-</section> 
-
-<!-- TRAILER -->
 <section class="trailer">
   <div class="trailer-header">
     <h2 class="trailer-heading">Watch the <span>Trailer</span></h2>
@@ -673,6 +662,29 @@
     </iframe>
   </div>
   <p class="trailer-caption">The Bigger Guy — Directed by Cyramatique</p>
+</section>
+
+<!-- =====================================================
+     MOVEMENT LANGUAGE
+     Uses the existing dance stills.
+     To add more: copy a movement-still block, update src.
+     ===================================================== -->
+<section class="movement">
+  <div class="movement-header">
+    <h2 class="movement-heading">Movement <span>Language</span></h2>
+    <p class="movement-sub">The body as emotional interior — choreography by Becca Francis</p>
+  </div>
+  <div class="movement-grid">
+    <div class="movement-still"><img src="images/biggerguy-stills-1.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-2.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-3.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-4.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-5.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-6.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-7.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-8.webp" alt="Movement still"></div>
+    <div class="movement-still"><img src="images/biggerguy-stills-9.webp" alt="Movement still"></div>
+  </div>
 </section>
 
 <!-- =====================================================
@@ -835,14 +847,16 @@
 <section class="team">
   <h2 class="team-heading">The <span>Team</span></h2>
   <p class="team-subline">A collaboration between Cyramatique, Julianna Rogala, Rebekka Louise, and Becca Francis</p>
+  <span class="cyramatique-badge">Cyramatique</span>
   <div class="team-grid">
+
     <div class="team-card">
       <!-- HEADSHOT: swap src to update. To use placeholder instead, replace img with:
            <div class="team-headshot-placeholder">
              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
              <span>Add headshot</span>
            </div> -->
-      <img src="images/headshot-elina" alt="Elina — Cyramatique" class="team-headshot">
+      <img src="images/headshot-elina.webp" alt="Elina — Cyramatique" class="team-headshot">
       <div class="team-role">Direction & Cinematography</div>
       <div class="team-name">Cyramatique</div>
       <div class="team-detail">Cyramatique is a London-based visual artist and storyteller whose work spans filmmaking, photography, and traditional mediums. Her practice in screendance represents one of many threads in a continuously expanding body of work — finding new territory in every form it inhabits.</div>
@@ -853,7 +867,7 @@
     </div>
 
     <div class="team-card">
-      <img src="images/headshot-juliana" alt="Julianna Rogala" class="team-headshot">
+      <img src="images/headshot-juliana.webp" alt="Julianna Rogala" class="team-headshot">
       <div class="team-role">Co-direction & Production</div>
       <div class="team-name">Julianna Rogala</div>
       <div class="team-detail">A London-based creative with roots in music, fine art, and visual storytelling. Raised in Ukraine with a classical background — studying opera and piano — she later moved to the UK to study Musical Theatre. Now working in brand consultancy, she brings an understanding of strategic storytelling into her creative practice, exploring art direction as a bridge between brand structure and artistic intuition.</div>
@@ -875,7 +889,7 @@
     </div>
 
     <div class="team-card">
-      <img src="images/headshot-becca" alt="Becca Francis" class="team-headshot">
+      <img src="images/headshot-becca.webp" alt="Becca Francis" class="team-headshot">
       <div class="team-role">Dancer / Choreography</div>
       <div class="team-name">Becca Francis</div>
       <div class="team-detail">Rebecca Francis is a London-based dance artist whose practice spans improvisation, contemporary movement, and classical ballet technique. Becca is currently pursuing an MA in Dance Performance at Trinity Laban Conservatoire of Music and Dance, where she continues to expand her creative and choreographic language. She joins the project as the body of the film's emotional interior.</div>
@@ -884,6 +898,7 @@
         @rebeccafrancis_
       </a>
     </div>
+
   </div>
 </section>
 
@@ -898,9 +913,9 @@
     <div class="contact-item">
       <span class="contact-role">Direction & Production</span>
       <span class="contact-name">Elina 'Cyramatique' & Julianna Rogala</span>
-      <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4879d96858985908d959181a48389858d88ca878b89">cyramatique@gmail.com</a></span>
+      <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4879d96858985908d959181a48389858d88ca878b89"><span class="__cf_email__" data-cfemail="f7948e85969a96839e868292b7909a969e9bd994989a">[email&#160;protected]</span></a></span>
     </div>
     <div class="contact-item">
       <span class="contact-role">Artist</span>
       <span class="contact-name">Rebekka Louise</span>
-      <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e4879d96858985908d959181a48389858d88ca878b89">rebekkalouisem@gmail.com</a></span>
+      <span class="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" 
