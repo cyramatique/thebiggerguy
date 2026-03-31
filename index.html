@@ -482,7 +482,7 @@
 .trailer-heading span { color: var(--amber-gold); }
 .trailer-sub { font-family: 'Lora', serif; font-style: italic; color: #A09080; font-size: 1rem; line-height: 1.6; margin-top: 0.6rem; }
 .trailer-video-wrap iframe {
-  position: absolute;
+  position: relative;
   top: 0; left: 0;
   width: 100%; height: 100%;
   border: 0;
@@ -554,14 +554,14 @@
      SONG
      ===================================================== -->
 <section class="song-theme">
-
-  <div class="song-theme-visual">
-    <iframe style="border-radius:12px"
-      src="https://open.spotify.com/embed/track/0KBUuguOTZuNE8gMpEoa5S?utm_source=generator&theme=0"
-      width="100%" height="352" frameBorder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"></iframe>
-  </div>
+<div class="song-theme-visual" style="display: flex; align-items: center;">
+  <iframe style="border-radius:12px; display: block;"
+    src="https://open.spotify.com/embed/track/0KBUuguOTZuNE8gMpEoa5S?utm_source=generator&theme=0"
+    width="100%" height="352" frameBorder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+</div>
 
   <div class="song-theme-text">
     <span class="section-label">The Song</span>
@@ -654,13 +654,9 @@
     <div class="movement-still"><img src="images/biggerguy-stills-9" alt="Movement still"></div>
     <!-- ADD MORE MOVEMENT STILLS HERE -->
   </div>
-</section>
+</section> 
 
-<!-- =====================================================
-     TRAILER
-     To add your video:
-       1. Link your Vimeo embed
-     ===================================================== -->
+<!-- TRAILER -->
 <section class="trailer">
   <div class="trailer-header">
     <h2 class="trailer-heading">Watch the <span>Trailer</span></h2>
@@ -678,7 +674,7 @@
   </div>
   <p class="trailer-caption">The Bigger Guy — Directed by Cyramatique</p>
 </section>
- 
+
 <!-- =====================================================
      MOODBOARD
      Images go in images/moodboard/ folder.
@@ -840,14 +836,13 @@
   <h2 class="team-heading">The <span>Team</span></h2>
   <p class="team-subline">A collaboration between Cyramatique, Julianna Rogala, Rebekka Louise, and Becca Francis</p>
   <div class="team-grid">
-
     <div class="team-card">
       <!-- HEADSHOT: swap src to update. To use placeholder instead, replace img with:
            <div class="team-headshot-placeholder">
              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
              <span>Add headshot</span>
            </div> -->
-      <img src="images/headshot-elina.jpg" alt="Elina — Cyramatique" class="team-headshot">
+      <img src="images/headshot-elina" alt="Elina — Cyramatique" class="team-headshot">
       <div class="team-role">Direction & Cinematography</div>
       <div class="team-name">Cyramatique</div>
       <div class="team-detail">Cyramatique is a London-based visual artist and storyteller whose work spans filmmaking, photography, and traditional mediums. Her practice in screendance represents one of many threads in a continuously expanding body of work — finding new territory in every form it inhabits.</div>
@@ -858,7 +853,7 @@
     </div>
 
     <div class="team-card">
-      <img src="images/headshot-juliana.jpg" alt="Julianna Rogala" class="team-headshot">
+      <img src="images/headshot-juliana" alt="Julianna Rogala" class="team-headshot">
       <div class="team-role">Co-direction & Production</div>
       <div class="team-name">Julianna Rogala</div>
       <div class="team-detail">A London-based creative with roots in music, fine art, and visual storytelling. Raised in Ukraine with a classical background — studying opera and piano — she later moved to the UK to study Musical Theatre. Now working in brand consultancy, she brings an understanding of strategic storytelling into her creative practice, exploring art direction as a bridge between brand structure and artistic intuition.</div>
@@ -880,7 +875,7 @@
     </div>
 
     <div class="team-card">
-      <img src="images/headshot-becca.jpg" alt="Becca Francis" class="team-headshot">
+      <img src="images/headshot-becca" alt="Becca Francis" class="team-headshot">
       <div class="team-role">Dancer / Choreography</div>
       <div class="team-name">Becca Francis</div>
       <div class="team-detail">Rebecca Francis is a London-based dance artist whose practice spans improvisation, contemporary movement, and classical ballet technique. Becca is currently pursuing an MA in Dance Performance at Trinity Laban Conservatoire of Music and Dance, where she continues to expand her creative and choreographic language. She joins the project as the body of the film's emotional interior.</div>
@@ -889,7 +884,6 @@
         @rebeccafrancis_
       </a>
     </div>
-
   </div>
 </section>
 
