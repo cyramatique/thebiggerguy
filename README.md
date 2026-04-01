@@ -11,7 +11,7 @@ Live site: `https://[your-github-username].github.io/the-bigger-guy`
 *The Bigger Guy* is a 4-minute screendance music video set inside a church interior, exploring themes of forgiveness, grace, and emotional expectation. The camera operates as a creative collaborator — finding in choreography and sacred space what neither could express alone.
 
 **Collaborators**
-- Directors: Elena (Cyramatique) & Juliana Rogala
+- Directors: Elina (Cyramatique) & Juliana Rogala
 - Choreographer & performer: Becca Francis
 - Music: Rebekka Louise
 
